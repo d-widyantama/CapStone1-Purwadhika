@@ -32,12 +32,6 @@
 
 # Initial Data
 # ------------------------------------------------------------------------------------------------
-from faker import Faker
-fake = Faker('id_ID')           #Indonesian Localization with faker
-
-from tabulate import tabulate   #Pretty Table module
-# import pandas as pd             #Pandas module, used to ease table reading with dataframe
-
 
 #Suppose the initial Data are already structured this way
 employeesMasterData = {
@@ -353,8 +347,9 @@ while True:
             if confirm.upper() == 'N':
                 print("CANCELED")
                 break
-            elif confirm == 'Y':
+            elif confirm.upper() == 'Y':
                 del employeesMasterData[delKey]
+                showEmployeeTable(employeesMasterData)
                 break
             else:
                 print("Masukkan format yang benar! (Y/N)")
